@@ -180,7 +180,7 @@ body {
 .projects {
 	text-align: center;
 }
-.projects h2{
+.projects h2, .contact-spi h2{
 	margin: 45px auto;
     font-family: 'Roboto Condensed', sans-serif;
     font-size: -webkit-xxx-large;
@@ -201,4 +201,19 @@ body {
 
 .panel {
 	box-shadow: 10px 10px 10px grey;
+}
+
+.contact-spi {
+	background-image: url("Images/contact.jpg");
+}
+
+
+
+.contact-detail{
+	color: white;
+	font-size: 20px;
+	background-color: rgba(0,0,0, 0.5);
+    /* border: 5px; */
+    border-radius: 10px;
+    padding-bottom: 10px;
 }
