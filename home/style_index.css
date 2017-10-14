@@ -177,3 +177,28 @@ body {
 	margin-top: 10px;
 }
 
+.projects {
+	text-align: center;
+}
+.projects h2{
+	margin: 45px auto;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: -webkit-xxx-large;
+    /*margin-bottom: 40px;*/
+    /*color: #676D76;*/
+}
+
+.project-description {
+	margin : 5%;
+	max-height: 500px;
+}
+
+.project-image {
+	margin: 10%;
+	height: 250px;
+	width: 250px;
+}
+
+.panel {
+	box-shadow: 10px 10px 10px grey;
+}
