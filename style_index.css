@@ -317,15 +317,22 @@ body {
         margin-right: auto;
         margin-left: auto;
         padding-bottom: 85%;
+        margin-top: 26%;
     }
     .main-heading h1 {
-        line-height: 195px;
+        line-height: 150px;
     }
     .slide-tag {
         font-size: 22px;
     }
     .odd, .even {
         display: none;
+    }
+
+    .project-image {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10%;
     }
 
     .mobile {

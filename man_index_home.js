@@ -3,10 +3,13 @@
 	sr.reveal(".main-image", {duration : 2000});
 	sr.reveal(".odd", {duration : 1500});
 	sr.reveal(".main-heading", {duration : 2000});
+	sr.reveal(".intro-section", {duration : 2000});
 	sr.reveal(".even", {duration : 1500});
 	sr.reveal(".activities", {duration : 1500});
 	sr.reveal(".contact-spi", {duration : 1500});
+	sr.reveal(".team-slides", {duration : 1500});
 	sr.reveal(".project-for-scrvl", {duration : 1500});
+	sr.reveal(".mobile", {duration : 1500});
 	sr.reveal(".ultra-nav", {duration : 1500, origin : 'top'})
 
 
