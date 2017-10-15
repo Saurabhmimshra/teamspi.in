@@ -12,6 +12,14 @@ body {
     font-size: -webkit-xxx-large;
     letter-spacing: 10px;
     text-align: center;
+    /*margin-bottom: 0px*/
+    background-color: white;
+}
+
+.super-nav {
+    padding-left: 0%;
+    padding-right: 0%;
+    background-color: white;
 }
 
 
@@ -216,6 +224,10 @@ body {
     /*color: #676D76;*/
 }
 
+.mobile {
+    display: none;
+}
+
 .project-description {
 	margin : 5%;
 	max-height: 500px;
@@ -265,4 +277,61 @@ body {
 
 #myBtn:hover {
     background-color: #449D44; /* Add a dark-grey background on hover */
+}
+
+@media only screen and (max-width: 1024px) {
+    .ultra-nav {
+            height: 9%; 
+            /*background-color: black;*/
+    }
+    .main {
+        margin-top: 12%;
+        padding-bottom: 15%;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    #main-img {
+        width: 50%;
+        position: relative;
+        right: -6%;
+        padding-top: 14%;
+    }
+
+    .main-heading {
+        margin-left: 0%;
+    }
+}
+
+@media only screen and (max-width: 414px){
+    .super-nav h1 {
+        font-size: small;
+    }
+    .navbar {
+        margin-top: 13%;
+    }
+    #main-img {
+        display: none;
+    }
+    .main {
+        margin-right: auto;
+        margin-left: auto;
+        padding-bottom: 85%;
+    }
+    .main-heading h1 {
+        line-height: 195px;
+    }
+    .slide-tag {
+        font-size: 22px;
+    }
+    .odd, .even {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
