@@ -211,6 +211,8 @@
 	</div>
 
 	
+
+{% if first_project %}
 <!-- projects -->
 		<div id="projects" class="container projects ">
 			<div class="project-for-scrvl"> <h2 >Our Projects</h2></div>
@@ -222,15 +224,8 @@
 					</div>
 					<div class="col-xs-6">
 						<div class="project-description">
-							<h3>Project Name</h3>
-							<p>sample textsample text</p>
-							<p>sample textsample textsample text</p>
-							<p>sample textsample text</p>
-							<p>sample textsample text</p>
-							<p>sample textsample textsample text</p>
-							<p>sample textsample text</p>
-							<p>sample textsample text</p>
-							<p>sample textsample text</p>
+							<h3>{{ first_project.title }}</h3>
+							<p>{{ first_project.description }}</p>
 						</div>
 
 					</div>
@@ -242,34 +237,20 @@
 						<img class = "project-image" src="{% static 'home/Images/temp2.jpg' %}">
 						
 							<div class="mobile-project-description">
-								<h3>Project Name</h3>
-								<p>sample textsample text</p>
-								<p>sample textsample textsample text</p>
-								<p>sample textsample text</p>
-								<p>sample textsample text</p>
-								<p>sample textsample textsample text</p>
-								<p>sample textsample text</p>
-								<p>sample textsample text</p>
-								<p>sample textsample text</p>
+								<h3>{{ first_project.title }}</h3>
+								<p>{{ first_project.description }}</p>
 							</div>
 
 						
 					</div>
 				</div>
-
+{% endif %}
 			<div class="panel panel-default even">
 				<div class="row">
 					<div class="col-xs-6">
 						<div class="project-description">
-							<h3>Project Name</h3>
-							<p>sample textsample text</p>
-							<p>sample textsample textsample text</p>
-							<p>sample textsample text</p>
-							<p>sample textsample text</p>
-							<p>sample textsample textsample text</p>
-							<p>sample textsample text</p>
-							<p>sample textsample text</p>
-							<p>sample textsample text</p>
+							<h3>{{ second_project.title }}</h3>
+							<p>{{ second_project.description }}</p>
 						</div>
 						
 					</div>
@@ -286,15 +267,8 @@
 						<img class = "project-image" src="{%static 'home/Images/temp2.jpg' %}">
 						
 							<div class="mobile-project-description">
-								<h3>Project Name</h3>
-								<p>sample textsample text</p>
-								<p>sample textsample textsample text</p>
-								<p>sample textsample text</p>
-								<p>sample textsample text</p>
-								<p>sample textsample textsample text</p>
-								<p>sample textsample text</p>
-								<p>sample textsample text</p>
-								<p>sample textsample text</p>
+								<h3>{{ second_project.title }}</h3>
+								<p>{{ second_project.description }}</p>
 							</div>
 
 						
