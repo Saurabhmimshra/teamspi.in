@@ -14,7 +14,10 @@ class Team(models.Model):
 
 class Member(models.Model):
 	name = models.CharField(max_length=100)
+	tag = models.CharField(max_length = 100)
 	team = models.ManyToManyField(Team)
+	introduction = models.CharField(max_length = 1000)
+
 
 	def __str__(self):
 		return self.name
@@ -23,6 +26,7 @@ class Member(models.Model):
 class Project(models.Model):
 	title = models.CharField(max_length=500)
 	description = models.CharField(max_length= 1000)
+
 
 	def __str__(self):
 		return self.title

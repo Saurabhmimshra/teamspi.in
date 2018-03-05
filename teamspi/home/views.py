@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
+
 from home.models import Team, Member, Project
 # Create your views here.
 
@@ -11,3 +12,4 @@ def index(request):
 					'second_project' : Project.objects.get(title = 'Noteshub'),
 		 		}	
 	return render(request, 'index.html', context)
+
