@@ -13,9 +13,14 @@ class Team(models.Model):
 		return self.name
 
 
+
 class Project(models.Model):
-	title = models.CharField(max_length=500)
-	description = models.CharField(max_length= 1000)
+	photo = models.ImageField(upload_to = 'project_photo/', blank=True)
+	title = models.CharField(max_length=500, null=True)
+	duration = models.CharField(max_length=50, null=True)
+	technologies = models.CharField(max_length=500, null=True)
+	description = models.CharField(max_length= 1000, null=True)
+	link = models.CharField(max_length=500, null=True)
 
 
 	def __str__(self):

@@ -176,6 +176,10 @@ nav h1{
 
 /*team Activities -- Saurabh Mishra*/
 
+#activities {
+    margin-top: 5%;
+}
+
 .activities {
 	text-align: center;
 	margin-bottom: 60px;
@@ -238,11 +242,20 @@ nav h1{
 }
 
 .project-description {
-	margin : 5%;
+    margin: 5%;
 	max-height: 500px;
 }
 
+.project-description p {
+    text-align: justify;
+    margin-top: 10%;
+    font-family: 'Roboto Slab', serif;
+    font-size: initial;
+    word-spacing: 5px;
+}
+
 .project-image {
+    border-radius: 10%;
 	margin: 10%;
 	height: 250px;
 	width: 250px;
@@ -307,6 +320,7 @@ nav h1{
     }
 
     .mobile {
+        padding: 5% 5%;
         display: block;
         width: 85%;
         margin-left: auto;

@@ -88,7 +88,7 @@
 	</div>
 
 	<div id="teams" class="container team-slides">
-		<h2>Our Teams</h2>
+		<h2>Our Domains</h2>
 		<div class="row">
 			<div class="col-xs-12 no-pad">
 			 <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -99,19 +99,8 @@
 
 			      <div class="item active">
 			        <div class="row">
-			        	<div class="col-xs-3 team-slides-single">
-			        		<a href="#">
-			        			<img  src="{% static 'home/Images/web.png' %}" alt="Web Development" width="100" height="100">
-					        	<div class="slide-tag">
-					          <!-- <a href="#"> -->
-					          		<h3>Web D</h3>
-					          		<!-- <p>The atmosphere in Chania has a touch of Florence and Venice.</p> -->
-					          <!-- </a> -->
-					        	</div>
-					        </a>
-			        	</div>
-			        	<div class="col-xs-3 team-slides-single">
-			        		<a href="#">
+			        	<div class="col-xs-4 team-slides-single">
+			        		<a href="{% url 'team' android.pk %}">
 			        			<img  src="{% static 'home/Images/android.jpg' %} " alt="Web Development" width="100" height="100">
 					        	<div class="slide-tag">
 					          <!-- <a href="#"> -->
@@ -121,23 +110,23 @@
 					        	</div>
 					        </a>
 			        	</div>
-			        	<div class="col-xs-3 team-slides-single">
-			        		<a href="#">
-			        			<img  src="{% static 'home/Images/cloud.png' %}" alt="Web Development" width="100" height="100">
+			        	<div class="col-xs-4 team-slides-single">
+			        		<a href="{% url 'team' webd.pk %}">
+			        			<img  src="{% static 'home/Images/web.png' %}" alt="Web Development" width="100" height="100">
 					        	<div class="slide-tag">
 					          <!-- <a href="#"> -->
-					          		<h3>Cloud</h3>
+					          		<h3>Web Development</h3>
 					          		<!-- <p>The atmosphere in Chania has a touch of Florence and Venice.</p> -->
 					          <!-- </a> -->
 					        	</div>
 					        </a>
 			        	</div>
-			        	<div class="col-xs-3 team-slides-single">
-			        		<a href="#">
-			        			<img  src="{% static 'home/Images/java.png' %}" alt="Web Development" width="100" height="100">
+			        	<div class="col-xs-4 team-slides-single">
+			        		<a href="{% url 'team' cloud.pk %}">
+			        			<img  src="{% static 'home/Images/cloud.png' %}" alt="Web Development" width="100" height="100">
 					        	<div class="slide-tag">
 					          <!-- <a href="#"> -->
-					          		<h3>Java</h3>
+					          		<h3>Cloud</h3>
 					          		<!-- <p>The atmosphere in Chania has a touch of Florence and Venice.</p> -->
 					          <!-- </a> -->
 					        	</div>
@@ -148,19 +137,19 @@
 
 			      <div class="item">
 			        <div class="row">
-			        	<div class="col-xs-3 team-slides-single">
-			        		<a href="#">
-			        			<img  src="{% static 'home/Images/python.png'%}" alt="Web Development" width="100" height="100">
+			        	<div class="col-xs-4 team-slides-single">
+			        		<a href="{% url 'team' java.pk %}">
+			        			<img  src="{% static 'home/Images/java.png' %}" alt="Web Development" width="100" height="100">
 					        	<div class="slide-tag">
 					          <!-- <a href="#"> -->
-					          		<h3>Python</h3>
+					          		<h3>Java</h3>
 					          		<!-- <p>The atmosphere in Chania has a touch of Florence and Venice.</p> -->
 					          <!-- </a> -->
 					        	</div>
 					        </a>
 			        	</div>
-			        	<div class="col-xs-3 team-slides-single">
-			        		<a href="#">
+			        	<div class="col-xs-4 team-slides-single">
+			        		<a href="{% url 'team' ml.pk %}">
 			        			<img  src="{% static 'home/Images/ml.png' %}" alt="Web Development" width="100" height="100">
 					        	<div class="slide-tag">
 					          <!-- <a href="#"> -->
@@ -170,23 +159,12 @@
 					        	</div>
 					        </a>
 			        	</div>
-			        	<div class="col-xs-3 team-slides-single">
-			        		<a href="#">
+			        	<div class="col-xs-4 team-slides-single">
+			        		<a href="{% url 'team' bd.pk %}">
 			        			<img  src="{% static 'home/Images/bigdata.png' %}" alt="Web Development" width="100" height="100">
 					        	<div class="slide-tag">
 					          <!-- <a href="#"> -->
 					          		<h3>Big Data</h3>
-					          		<!-- <p>The atmosphere in Chania has a touch of Florence and Venice.</p> -->
-					          <!-- </a> -->
-					        	</div>
-					        </a>
-			        	</div>
-			        	<div class="col-xs-3 team-slides-single">
-			        		<a href="#">
-			        			<img  src="{% static 'home/Images/django.png' %}" alt="Web Development" width="100" height="100">
-					        	<div class="slide-tag">
-					          <!-- <a href="#"> -->
-					          		<h3>Django</h3>
 					          		<!-- <p>The atmosphere in Chania has a touch of Florence and Venice.</p> -->
 					          <!-- </a> -->
 					        	</div>
@@ -222,7 +200,7 @@
 			<div class="panel panel-default odd">
 				<div class="row">
 					<div class="col-xs-6">
-						<img class = "project-image" src="{% static 'home/Images/temp2.jpg' %}">
+						<img class = "project-image" src="{{ first_project.photo.url }}">
 					</div>
 					<div class="col-xs-6">
 						<div class="project-description">
@@ -236,7 +214,7 @@
 			<!-- projects for mobile view odd-->
 				<div class="panel panel-default mobile">
 					<div class="mobile-row">
-						<img class = "project-image" src="{% static 'home/Images/temp2.jpg' %}">
+						<img class = "project-image" src="{{ first_project.photo.url }}">
 						
 							<div class="mobile-project-description">
 								<h3>{{ first_project.title }}</h3>
@@ -257,7 +235,7 @@
 						
 					</div>
 					<div class="col-xs-6 ">
-						<img class = "project-image" src="{%static 'home/Images/temp2.jpg'%}">
+						<img class = "project-image" src="{{ second_project.photo.url }}">
 					</div>
 				</div>
 			</div>
@@ -266,7 +244,7 @@
 
 				<div class="panel panel-default mobile">
 					<div class="mobile-row">
-						<img class = "project-image" src="{%static 'home/Images/temp2.jpg' %}">
+						<img class = "project-image" src="{{ second_project.photo.url }}">
 						
 							<div class="mobile-project-description">
 								<h3>{{ second_project.title }}</h3>
@@ -276,9 +254,9 @@
 						
 					</div>
 				</div>
+				<a style="font-size: 25px; position: relative; left: 45%;" href="#">View More</a>
 
 		</div>
-
 
 
 

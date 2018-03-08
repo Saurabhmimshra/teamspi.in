@@ -12,18 +12,20 @@ def member(request, member_id):
 	
 	try:
 		ob = Member.objects.get(pk=member_id)
-		ob_ed = Education.objects.filter(member__pk = member_id)
-		ob_ex = Experience.objects.filter(member__pk = member_id)
-		ob_sk = Skill.objects.filter(member__pk = member_id)
 	except Member.DoesNotExist:
 		raise Http404('Member does not exit')
 
+	ob_ed = Education.objects.filter(member__pk = member_id)
+	ob_ex = Experience.objects.filter(member__pk = member_id)
+	ob_sk = Skill.objects.filter(member__pk = member_id)
+	ob_pr = Project.objects.filter(member__pk = member_id)
 
 	context = 	{
 					'member': ob,
 					'education': ob_ed,
 					'experience': ob_ex,
 					'skills': ob_sk,
+					'projects': ob_pr,
 			  	}
 	return render(request, 'member.html', context)
 

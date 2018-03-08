@@ -74,15 +74,15 @@
 					<li>
 						<h4><strong>{{ edu.course }}</strong></h4>
 
-						<p><span class="dates">Year of Completion:</span><span class="expeiance">{{ edu.passing_year }}</span>
+						<p><span class="dates">Year of Completion: </span><span class="expeiance">{{ edu.passing_year }}</span>
 						</p>
 						
 						<p>
-						<span class="dates">Institution:</span><span class="expeiance">{{ edu.institution }}</span>
+						<span class="dates">Institution: </span><span class="expeiance">{{ edu.institution }}</span>
 						
 						</p>
 						<p>
-						<span class="dates">Percentage:</span><span class="expeiance">{{ edu.percentage }}%</span>
+						<span class="dates">Percentage: </span><span class="expeiance">{{ edu.percentage }}%</span>
 						</p>
 						
 					</li>
@@ -106,17 +106,53 @@
 						<h4><strong>{{ exp.company }}</strong></h4>
 						
 						<p style="max-width: 800px;">
-								<span class="dates">Duration:</span><span class="expeiance" >{{ exp.duration }}</span>
+								<span class="dates">Duration: </span><span class="expeiance" >{{ exp.duration }}</span>
 						</p>
 
 						<p>
-						<span class="dates">Profile:</span><span class="expeiance">{{ exp.profile }}</span>
+						<span class="dates">Profile: </span><span class="expeiance">{{ exp.profile }}</span>
 						
 						</p>
 
 						<p>
-						<span class="dates">Description:</span><span  class="expeiance wrap">{{ exp.description }}</span>
+						<span class="dates">Description: </span><span  class="expeiance wrap">{{ exp.description }}</span>
                         </p>
+
+					</li>
+					
+				{% endfor %}
+
+				</ul>
+			</div>
+		
+			
+		{% endif %}
+
+
+		{% if projects %}
+
+			<div class="grid_16 experiences">
+				<h3>Projects</h3>
+				<ul>
+
+				{% for project in projects %}
+
+					<li>
+						<h4><a href="{{ project.link }}"><strong>{{ project.title }}</strong></a></h4>
+						
+						<p style="max-width: 800px;">
+								<span class="dates">Duration: </span><span class="expeiance" >{{ project.duration }}</span>
+						</p>
+
+						<p>
+						<span class="dates">Technologies: </span><span class="expeiance">{{ project.technologies }}</span>
+						
+						</p>
+
+						<p>
+						<span class="dates">Description: </span><span  class="expeiance wrap">{{ project.description }}</span>
+                        </p>
+
 
 					</li>
 					
