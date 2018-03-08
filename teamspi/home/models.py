@@ -43,7 +43,7 @@ class Member(models.Model):
 
 
 	def __str__(self):
-		return self.name
+		return self.name + " : " + self.email
 
 
 # class Secondary_education(models.model):
