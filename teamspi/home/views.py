@@ -13,7 +13,7 @@ def index(request):
 					'second_project' : Project.objects.get(title = 'Noteshub'),
 					'android' : Team.objects.get(name = 'Android Deveplopement'),
 					'webd' : Team.objects.get(name = 'Web Development'),
-					'cloud' : Team.objects.get(name = 'Coud'),
+					'cloud' : Team.objects.get(name = 'Cloud'),
 					'java' : Team.objects.get(name = 'Java'),
 					'ml' : Team.objects.get(name = 'Machine Learning'),
 					'bd': Team.objects.get(name = 'Big Data'),

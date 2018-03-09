@@ -1,0 +1,156 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project name</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="{% static "css/team_style.css" %}">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+
+</head>
+<body>
+
+
+    <!-- NAVBAR START -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Page 1</a></li>
+      <li><a href="#">Page 2</a></li>
+      <li><a href="#">Page 3</a></li>
+    </ul>
+  </div>
+</nav>
+<!-- NAVBAR END -->
+<center><span ><a href="{{ project.link }}"><h1 style='color: #7eb21b;font-weight: 90%;'><strong>{{ project.title }}</strong></h1></a></span></center>
+
+
+<div class='container-fluid hoverable view hm-zoom container-fluid team_member'>
+        <div class='col-md-8 pro-image'>
+                <a href="#"><img src="{{ project.photo.url }}" width='80%' height='300px'></a>
+            </div class='col-md-4'><span ><h1 style='color: #7eb21b;font-weight: 90%;padding-left: 27px;'><strong>Duration : <span style='color: #00b5e2;font-weight: 90%;padding-left: 27px;'><h3>{{ project.duration }}</h3></span></strong></h1></span>
+<span ><h1 style='color: #7eb21b;font-weight: 90%;padding-left: 27px;'><strong>Github Link : <span style='color: #00b5e2;font-weight: 90%;padding-left: 27px;'><h3><a>{{ project.github }}</a></h3></span></strong></h1></span></div>
+
+
+
+
+
+
+
+
+
+    
+        <div class='container ' style="text-align: justify; ">
+                <span ><h1 style='color: #7eb21b;font-weight: 90%;'><strong>About</strong></h1></span>    
+                <h4>{{ project.description }}</h4>   
+                
+        </div>
+
+         <div class='container ' style="text-align: justify; ">
+                <span ><h1 style='color: #7eb21b;font-weight: 90%;'><strong>Technologies Used</strong></h1></span>    
+                <h4>{{ project.technologies }}</h4>   
+                
+        </div>
+
+        <div class='container '>
+            <span ><h1 style='color: #7eb21b;font-weight: 90%;'><strong>Contributers</strong></h1></span>
+                
+
+{% for member in members %}
+
+        {% if forloop.first %}
+
+
+           <div class="container-fluid">
+    
+                <div class="row-fluid">
+
+       {% endif %}
+
+            <div class="team_member example hoverable view hm-zoom col-md-4">
+                <a href="#"><center><img src="{{ member.photo.url }}"  alt="IMAGE" width="55%" height="12%"></a></center>
+                <a href="#"><br><span class="member_name"><center>{{ member.name }}</center></span></a>
+                <span class="member_stack"><center>({{ member.tag }})<center></span>
+               
+            </div>
+            &nbsp &nbsp&nbsp &nbsp<br>
+
+        {% if forloop.counter|divisibleby:3 %}
+           <div class="container-fluid">
+    
+                <div class="row-fluid">
+
+        {% endif %}
+
+        {% if forloop.last %}
+
+                </div>
+                <br>
+            </div>
+
+        {% endif %}
+{% endfor %}
+
+
+</div><br>
+</div>
+
+
+
+            
+</body>
+<style type="text/css">
+
+
+/*saurabh's code*/
+
+.pro-image img {
+      border-radius: 0% 50px; !important
+    margin: auto; !important
+}
+
+
+
+
+/*-------------------------------------------------------------------------------------------*/
+
+
+.card-img-top{
+  width:100%;
+  height:auto;
+}
+@media only screen and (min-width: 500px) {
+.col-md-3
+{
+    width: 31%; 
+}
+}
+
+
+
+
+</style>
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<script type="text/javascript">
+
+window.sr = ScrollReveal();
+sr.reveal('.text', {duration : 1000, origin : 'bottom'});
+sr.reveal('.heads', {duration : 1000, origin : 'bottom'});
+sr.reveal('.team_member', {duration : 1000, origin : 'left' });
+sr.reveal('.footer-heading', {duration : 1000, origin : 'left'});
+sr.reveal('.social', {duration : 1000, origin : 'right' });
+</script>
+</html>

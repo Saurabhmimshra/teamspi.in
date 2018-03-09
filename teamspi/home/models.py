@@ -21,6 +21,8 @@ class Project(models.Model):
 	technologies = models.CharField(max_length=500, null=True)
 	description = models.CharField(max_length= 1000, null=True)
 	link = models.CharField(max_length=500, null=True)
+	github = models.CharField(max_length = 500, null=True)
+	team = models.ManyToManyField(Team)
 
 
 	def __str__(self):

@@ -1,0 +1,203 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Our Projects</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	<link rel="stylesheet" type="text/css" href="{% static "allprojects/style.css" %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.4.1/css/mdb.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
+	<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+
+</head>
+<body>
+
+
+	<!-- NAVBAR START -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">WebSiteName</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#">Page 1</a></li>
+      <li><a href="#">Page 2</a></li>
+      <li><a href="#">Page 3</a></li>
+    </ul>
+  </div>
+</nav>
+<!-- NAVBAR END -->
+
+<!-- 
+<div class='container-fluid'>
+		<div class='row-fluid' style="padding: 15px">
+			<div class='col-md-5 jumbotron hoverable view hm-zoom container-fluid team_member' style="background-color: #00b5e2" >
+				<span style="color: white;font-family: 'Rammetto One';" >
+				<h3 >OUR PROJECTS</h3>
+				 ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia 
+				
+			</span>
+			</div>
+			<div class='col-md-7  hoverable view hm-zoom container-fluid team_member'>
+				<img src="./1.JPG" width='100%'>
+			</div>
+
+</div></div>
+
+
+background: rgba(62, 215, 21, 0.2);
+    border-radius: 10px;
+
+
+ -->
+
+
+
+
+
+{% for team in teams %}
+	
+		<span ><h1 style='color: #7eb21b;font-weight: 90%;padding-left: 27px;text-align: center'><strong>{{team.name}}</strong></h1></span>
+		
+	{% for project in team.project_set.all %}
+
+		{% if forloop.first %}
+
+			<div class='container-fluid '>
+				<div class='row-fluid' style="padding: 15px">
+
+		{% endif %}
+
+					<div class='col-md-3 jumbotron hoverable view hm-zoom container-fluid team_member' style="background-color: whitesmoke;" >
+			      		<div class='row-fluid view hm-zoom'>
+			      			<img src="{{ project.photo.url }}" height="200px" width="300px">	
+			      		</div>
+			      		<br />
+			      		<span>
+			      			<center style='font-family: "Rammetto One";color: #2375bb'>
+			      				<h3>{{ project.title }}</h3>
+			      			</center>
+			      		</span>	
+						<p class="wrap"  >{{ project.description }}</p>
+						<div class="mybtn" style="background-color: '#2375bb'">
+							<center>
+								<a href="#" ><button class='btn btn-primary'>
+									<h4 style="background-color: '#2375bb'">View Details</h4>
+								</button></a>
+							</center>
+						</div>
+						<br/>
+		     		</div>
+
+	     	     		<div class='col-md-1' style="width: 0.33333333%;"></div>
+
+		{% if forloop.counter|divisibleby:3 %}
+
+			<div class='container-fluid'>
+				<div class='row-fluid' style="padding: 15px">
+
+
+		{% endif %}
+
+		{% if forloop.last %}
+
+		   		</div>
+			</div>
+
+		{% endif %}
+
+	{% endfor %}
+
+{% endfor %}
+	
+
+
+
+
+
+	<div class="footer">
+		<div class="container">
+			<div class="footer-heading">
+				<p><span id="footer-logo">S.P.I.</span>Special Project Initiative</p>
+			</div>
+				<div class="social">
+					<ul class="social-list">
+						<li class="icon-footer"><a href="#"><i class="fa fa-facebook-square"></i></a></li>
+						<li class="icon-footer" ><a href="#"><i  class="fa fa-google-plus-square"></i></a></li>
+					</ul>
+				</div>
+			<div class="line"></div>
+			<div class="pow">
+				<p>Powered by Teamspi.in</p>
+			</div>
+
+		</div>
+
+	</div>
+
+
+</body>
+<style type="text/css">.card-img-top{
+  width:100%;
+  height:auto;
+}
+@media only screen and (min-width: 500px) {
+.col-md-3
+{
+	width: 31%;	
+}
+
+.mybtn{
+	    margin-top: 50%;
+}
+
+}
+</style>
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<script type="text/javascript">
+
+window.sr = ScrollReveal();
+sr.reveal('.text', {duration : 1000, origin : 'bottom'});
+sr.reveal('.heads', {duration : 1000, origin : 'bottom'});
+sr.reveal('.team_member', {duration : 1000, origin : 'left' });
+sr.reveal('.footer-heading', {duration : 1000, origin : 'left'});
+sr.reveal('.social', {duration : 1000, origin : 'right' });
+
+
+
+//linge wrapper
+
+function truncateText(selectorclass, maxLength) {
+    var elements = document.getElementsByClassName(selectorclass);
+
+    for(var i = 0; i < elements.length; i++){
+    	var truncated = elements[i].innerText;
+    	// console.log(truncated.length);
+
+    	if (truncated.length > maxLength) {
+        	truncated = truncated.substr(0,maxLength) + '...';
+    	}
+    	elements[i].innerText = truncated;
+  	}
+   
+}
+
+truncateText('wrap', 107);
+
+</script>
+</html>
