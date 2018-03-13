@@ -172,7 +172,47 @@
 			        	</div>
 			        </div>
 			      </div>
-			    
+	
+			      <div class="item">
+			        <div class="row">
+			        	<div class="col-xs-4 team-slides-single">
+			        		<a href="{% url 'team' java.pk %}">
+			        			<img  src="{% static 'home/Images/algo.png' %}" alt="Web Development" width="100" height="100">
+					        	<div class="slide-tag">
+					          <!-- <a href="#"> -->
+					          		<h3>Algorithms</h3>
+					          		<!-- <p>The atmosphere in Chania has a touch of Florence and Venice.</p> -->
+					          <!-- </a> -->
+					        	</div>
+					        </a>
+			        	</div>
+			        	<div class="col-xs-4 team-slides-single">
+			        		<a href="{% url 'team' ml.pk %}">
+			        			<img  src="{% static 'home/Images/datascience.png' %}" alt="Web Development" width="100" height="100">
+					        	<div class="slide-tag">
+					          <!-- <a href="#"> -->
+					          		<h3>Data Science</h3>
+					          		<!-- <p>The atmosphere in Chania has a touch of Florence and Venice.</p> -->
+					          <!-- </a> -->
+					        	</div>
+					        </a>
+			        	</div>
+			        	<div class="col-xs-4 team-slides-single">
+			        		<a href="{% url 'team' bd.pk %}">
+			        			<img  src="{% static 'home/Images/marketing.png' %}" alt="Web Development" width="100" height="100">
+					        	<div class="slide-tag">
+					          <!-- <a href="#"> -->
+					          		<h3>Marketing</h3>
+					          		<!-- <p>The atmosphere in Chania has a touch of Florence and Venice.</p> -->
+					          <!-- </a> -->
+					        	</div>
+					        </a>
+			        	</div>
+			        </div>
+			      </div>
+	
+
+
 			  
 			    </div>
 
@@ -190,7 +230,10 @@
 		</div>
 	</div>
 
-	
+
+<!-- Projects  -->	
+
+
 
 {% if first_project %}
 <!-- projects -->
@@ -204,7 +247,7 @@
 					</div>
 					<div class="col-xs-6">
 						<div class="project-description">
-							<h3>{{ first_project.title }}</h3>
+							<a href="{% url 'project' first_project.pk %}"><h3>{{ first_project.title }}</h3></a>
 							<p>{{ first_project.description }}</p>
 						</div>
 
@@ -217,7 +260,7 @@
 						<img class = "project-image" src="{{ first_project.photo.url }}">
 						
 							<div class="mobile-project-description">
-								<h3>{{ first_project.title }}</h3>
+								<a href="{% url 'project' first_project.pk %}"><h3>{{ first_project.title }}</h3></a>
 								<p>{{ first_project.description }}</p>
 							</div>
 
@@ -229,7 +272,7 @@
 				<div class="row">
 					<div class="col-xs-6">
 						<div class="project-description">
-							<h3>{{ second_project.title }}</h3>
+							<a href="{% url 'project' second_project.pk %}"><h3>{{ second_project.title }}</h3></a>
 							<p>{{ second_project.description }}</p>
 						</div>
 						
@@ -247,14 +290,14 @@
 						<img class = "project-image" src="{{ second_project.photo.url }}">
 						
 							<div class="mobile-project-description">
-								<h3>{{ second_project.title }}</h3>
+								<a href="{% url 'project' second_project.pk %}"><h3>{{ second_project.title }}</h3></a>
 								<p>{{ second_project.description }}</p>
 							</div>
 
 						
 					</div>
 				</div>
-				<a style="font-size: 25px; position: relative; left: 45%;" href="#">View More</a>
+				<a style="font-size: 25px; position: relative; left: 45%;" href="{% url 'allProjects'%}">View More</a>
 
 		</div>
 
