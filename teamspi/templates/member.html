@@ -15,10 +15,58 @@
 <link rel="stylesheet" media="screen and (max-width:480px)" href="{% static "member/mobile.css" %}">
 <link rel="stylesheet" media="screen and (min-width:481px)" href="{% static "member/cv.css" %}">
 <link rel="stylesheet" media="print" href="cv/print.css">
+
+<!-- saurabh's code -->
+
+<!-- important cdns -->
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+ 	
+	
+	
+	<!-- google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">	
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">	
+	<link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+
+<!-- custom styles-->
+
+		<link rel="stylesheet" type="text/css" href="{% static 'footer/style_footer.css' %}">
+
+
 </head>
+<body>
+
+	<!-- NAVBAR START -->
+	<nav class="navbar navbar-default ultra-nav navbar-fixed-top">
+
+	  <div class="container">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>                        
+	      </button>
+	      <a class="navbar-brand" href="{% url 'index' %}">Special Project Initiative</a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="myNavbar">
+	      <ul class="nav navbar-nav navbar-right">
+	        <li><a data-scroll href="{% url 'index'  %}#about">About</a></li>
+	        <li><a data-scroll href="{% url 'index' %}#teams">Our Teams</a></li>
+	        <li><a data-scroll href="{% url 'index' %}#projects">Our Projects</a></li>
+	        <li><a data-scroll href="{% url 'index' %}#activities">Our Activities</a></li>
+	        <li><a data-scroll href="{% url 'index' %}#contact">Contact</a></li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+
+<!-- NAVBAR END -->
 
 
-	<header role="banner">
+	<header style="margin-top: 5%;" role="banner">
 		<div class="container_16">
 				<hgroup>
 					<h1>{{ member.name }}</h1>
@@ -186,5 +234,33 @@
 	</section>
 
 
+<!-- footer -->
 
-</body></html>
+	<div class="footer">
+		<div class="container">
+			<div class="footer-heading">
+				<p><span id="footer-logo">S.P.I.</span>Special Project Initiative</p>
+			</div>
+				<div class="social">
+					<ul class="social-list">
+						<li class="icon-footer"><a href="https://www.facebook.com/SPI-Special-Projects-Initiative-264592270747076/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+						<li class="icon-footer" ><a href="https://www.instagram.com/spi_niec/"><i class="fa fab fa-instagram" aria-hidden="true" ></i></a></li>
+					</ul>
+				</div>			
+			<div class="line"></div>
+			<div class="pow">
+				<p>Powered by Teamspi.in</p>
+			</div>
+			
+		</div>
+		
+	</div>
+<script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+<script type="text/javascript">
+	
+	window.sr = ScrollReveal();
+</script>
+<script type="text/javascript" src = "{% static 'footer/man_footer.js' %}"></script>
+
+</body>
+</html>

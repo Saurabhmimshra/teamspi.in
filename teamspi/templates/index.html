@@ -30,11 +30,10 @@
 	<link rel="stylesheet" type="text/css" href="{% static 'footer/style_footer.css' %}">
 
 
+
 </head>
 <body>
 
-
-	
 
 	<nav class="navbar navbar-default ultra-nav navbar-fixed-top">
 
@@ -58,6 +57,10 @@
 	    </div>
 	  </div>
 	</nav>
+
+  
+
+   
 
 <!-- scroll back button -->
 	<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
@@ -84,7 +87,9 @@
 
 	<div id="about"  class="intro-section jumbotron">
 		<h2>What is SPI ?</h2>
-		<p >Free tutorials from Google on everything from your website to online marketing and beyond. Choose the topics you want to learn, or complete the whole online course for a certification from Google and IAB Europe.</p>
+		<p >SPI was built with the purpose of improving oneself as an individual and as a team. This is a platform where we muster all the requirements of guidance, resources, sharing of knowledge etc., whatever it takes to harness the capabilities of a team in the best way possible. We bring out the projects collectively working on them.
+Our motto is clear:</p> 
+<p>"WE THINK, SHARE AND DEVELOPE!!"</p>
 	</div>
 
 	<div id="teams" class="container team-slides">
@@ -325,32 +330,39 @@
 	    <div class="carousel-inner team-activities" role="listbox">
 
 	      <div class="item active">
-	       	<img src="{% static 'home/Images/me.jpg' %}" alt="Chania" >
+	       	<img src="{% static 'home/Images/slide1.jpg' %}" alt="Chania" >
 	        <div class="carousel-caption">
-	          <h3>Chania</h3>
-	          <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+	          <h3>Hackathon2K17</h3>
+	          <p>The entry door of sheer talent and skills</p>
 	        </div>
 	      </div>
 	      <div class="item">
-	       	<img src="{% static 'home/Images/temp.jpg' %}" alt="Chania" >
+	       	<img src="{% static 'home/Images/slide2.jpg' %}" alt="Chania" >
 	        <div class="carousel-caption">
-	          <h3>Chania</h3>
-	          <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+	          <h3>Selection Interviews</h3>
+	          <p>The final hurdle to overcome and be a part of the Team</p>
 	        </div>
 	      </div>
 
 	      <div class="item">
-	       	<img src="{% static 'home/Images/me.jpg' %}" alt="Chania" >
+	       	<img src="{% static 'home/Images/slide3.jpg' %}" alt="Chania" >
 	        <div class="carousel-caption">
-	          <h3>Chania</h3>
-	          <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+	          <h3>IEEE Project Exhibition</h3>
+	          <p>2nd prize in the highly competitive environment, including Hardware exhibits</p>
 	        </div>
 	      </div>
 	      <div class="item">
-	       	<img src="{% static 'home/Images/temp.jpg' %}" alt="Chania" >
+	       	<img src="{% static 'home/Images/slide4.jpg' %}" alt="Chania" >
 	        <div class="carousel-caption">
-	          <h3>Chania</h3>
-	          <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+	          <h3>Smart India Hackathon 2017</h3>
+	          <p>Proud participants of the first edition of World's Largest Hackathon</p>
+	        </div>
+	      </div>
+	      <div class="item">
+	       	<img src="{% static 'home/Images/slide5.jpg' %}" alt="Chania" >
+	        <div class="carousel-caption">
+	          <h3>Hack VSIT</h3>
+	          <p>A day full of hardcore Machine Learning and Cloud based development</p>
 	        </div>
 	      </div>
 	        
@@ -372,27 +384,59 @@
 	</div>
 	
 
+
+<!-- <h1>Contact</h1>
+<form role="form" action="" method="post">
+    {% csrf_token %}
+  	{% for field in form %}
+  		
+  	{% endfor %}
+    <button type="submit">Submit</button>
+</form>
+ -->
 	<!-- Container (Contact Section) -->
+
+
 <div id="contact" class="container-fluid bg-grey contact-spi">
   <h2 class="text-center">CONTACT</h2>
   <div class="row ">
     <div class="col-sm-5">
     </div>
     <div class="col-sm-7 slideanim">
-      <div class="row ">
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
-        </div>
-        <div class="col-sm-6 form-group">
-          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
-        </div>
-      </div>
-      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
-      <div class="row">
-        <div class="col-sm-12 form-group">
-          <button class="btn btn-default pull-right" type="submit">Send</button>
-        </div>
-      </div>
+    	
+      	<form  role="form" action="" method="post">
+      		{% csrf_token %}
+      		
+	      <div class="row ">
+	        <div class="col-sm-6 form-group">
+	          <!--<input class="form-control" id="name" name="name" placeholder="Name" type="text" required> -->
+
+	          {{ form.contact_name }}
+
+	        </div>
+	        <div class="col-sm-6 form-group">
+	          <!-- <input class="form-control" id="email" name="email" placeholder="Email" type="email" required> -->
+
+	          
+	          {{ form.contact_email }}
+
+	        </div>
+	      </div>
+
+
+	     <!-- <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br> -->
+
+	      {{ form.content}}
+	      
+	      <p class="text-success">{{ msg }}</p>
+	      <div class="row">
+	        <div class="col-sm-12 form-group">
+	          <button style="margin-top:10px;" class="btn btn-default pull-right" type="submit">Send</button>
+	        </div>
+	      </div>
+	     </form>
+    	
+
     </div>
   </div>
 </div>
@@ -407,8 +451,8 @@
 			</div>
 				<div class="social">
 					<ul class="social-list">
-						<li class="icon-footer"><a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
-						<li class="icon-footer" ><a href="#"><i  class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
+						<li class="icon-footer"><a href="https://www.facebook.com/SPI-Special-Projects-Initiative-264592270747076/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+						<li class="icon-footer" ><a href="https://www.instagram.com/spi_niec/"><i class="fa fab fa-instagram" aria-hidden="true" ></i></a></li>
 					</ul>
 				</div>			
 			<div class="line"></div>
@@ -425,6 +469,8 @@
 <script src="{% static 'smooth-scroll-master/dist/js/smooth-scroll.js' %}"></script>
 <script type="text/javascript" src = "{% static 'home/man_index_home.js' %}" ></script>
 <script type="text/javascript" src = "{% static 'footer/man_footer.js' %}"></script>
+<script type="text/javascript" src = "{% static 'home/canvas.js' %}"></script>
+
 
 </body>
 </html>

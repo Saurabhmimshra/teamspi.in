@@ -21,7 +21,6 @@ class Project(models.Model):
 	technologies = models.CharField(max_length=500, null=True)
 	description = models.CharField(max_length= 1000, null=True)
 	link = models.CharField(max_length=500, null=True)
-	github = models.CharField(max_length = 500, null=True)
 	team = models.ManyToManyField(Team)
 
 
@@ -43,6 +42,9 @@ class Member(models.Model):
 	email = models.EmailField(max_length = 200,null=True)
 	phone = models.CharField(max_length = 10,null=True)
 	website = models.CharField(max_length = 500, null=True)
+	linkedin = models.CharField(max_length = 500, null=True)
+	facebook = models.CharField(max_length = 500, null=True)
+	github = models.CharField(max_length = 500, null=True)
 	blog = models.CharField(max_length = 500, null = True)
 	hobbies_sports = models.CharField(max_length = 100, null= True)
 	hobbies_others = models.CharField(max_length = 200, null= True)

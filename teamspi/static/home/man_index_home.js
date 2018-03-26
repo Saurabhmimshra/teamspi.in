@@ -10,7 +10,7 @@
 	sr.reveal(".team-slides", {duration : 1500});
 	sr.reveal(".project-for-scrvl", {duration : 1500});
 	sr.reveal(".mobile", {duration : 1500});
-	sr.reveal(".ultra-nav", {duration : 1500, origin : 'top'})
+	// sr.reveal(".ultra-nav", {duration : 1500, origin : 'top'})
 
 
 // smooth scroll api
@@ -18,7 +18,7 @@
 var scroll = new SmoothScroll('a[href*="#"]', {
 	// Selectors
 	ignore: ['#myCarousel', '#teamact'], // Selector for links to ignore (must be a valid CSS selector)
-	header: ['.navbar'],  // Selector for fixed headers (must be a valid CSS selector)
+	header: ['.main-nav'],  // Selector for fixed headers (must be a valid CSS selector)
 
 	// Speed & Easing
 	speed: 800, // Integer. How fast to complete the scroll in milliseconds

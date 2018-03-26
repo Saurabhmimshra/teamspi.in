@@ -16,33 +16,61 @@
     <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
     <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 
+<!-- saurabh's code -->
+
+
+  <!-- important cdns -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  
+  
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet"> 
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"> 
+  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'footer/style_footer.css' %}">
+
+
 </head>
 <body>
 
 
-    <!-- NAVBAR START -->
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
+    
+  <nav class="main-nav navbar navbar-default ultra-nav navbar-fixed-top">
+
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="#myPage">Special Project Initiative</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a data-scroll href="#about">About</a></li>
+          <li><a data-scroll href="#teams">Our Teams</a></li>
+          <li><a data-scroll href="#projects">Our Projects</a></li>
+          <li><a data-scroll href="#activities">Our Activities</a></li>
+          <li><a data-scroll href="#contact">Contact</a></li>
+        </ul>
+      </div>
     </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-      <li><a href="#">Page 1</a></li>
-      <li><a href="#">Page 2</a></li>
-      <li><a href="#">Page 3</a></li>
-    </ul>
-  </div>
-</nav>
-<!-- NAVBAR END -->
-<center><span ><a href="{{ project.link }}"><h1 style='color: #7eb21b;font-weight: 90%;'><strong>{{ project.title }}</strong></h1></a></span></center>
+  </nav>
+
+<center style="margin-top: 5%;"><span ><a href="{{ project.link }}"><h1 style='color: #7eb21b;font-weight: 90%;'><strong>{{ project.title }}</strong></h1></a></span></center>
 
 
 <div class='container-fluid hoverable view hm-zoom container-fluid team_member'>
         <div class='col-md-8 pro-image'>
-                <a href="#"><img src="{{ project.photo.url }}" width='80%' height='300px'></a>
+                <a href="#" ><img style="margin:auto;" src="{{ project.photo.url }}" width='300px' height='300px'></a>
             </div class='col-md-4'><span ><h1 style='color: #7eb21b;font-weight: 90%;padding-left: 27px;'><strong>Duration : <span style='color: #00b5e2;font-weight: 90%;padding-left: 27px;'><h3>{{ project.duration }}</h3></span></strong></h1></span>
-<span ><h1 style='color: #7eb21b;font-weight: 90%;padding-left: 27px;'><strong>Github Link : <span style='color: #00b5e2;font-weight: 90%;padding-left: 27px;'><h3><a>{{ project.github }}</a></h3></span></strong></h1></span></div>
+<span ><h1 style='color: #7eb21b;font-weight: 90%;padding-left: 27px;'><strong>Link : <span style='color: #00b5e2;font-weight: 90%;padding-left: 27px;'><h3><a>{{ project.link }}</a></h3></span></strong></h1></span></div>
 
 
 
@@ -109,6 +137,29 @@
 </div>
 
 
+<!-- footer -->
+
+  <div class="footer">
+    <div class="container">
+      <div class="footer-heading">
+        <p><span id="footer-logo">S.P.I.</span>Special Project Initiative</p>
+      </div>
+        <div class="social">
+          <ul class="social-list">
+            <li class="icon-footer"><a href="https://www.facebook.com/SPI-Special-Projects-Initiative-264592270747076/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a></li>
+            <li class="icon-footer" ><a href="https://www.instagram.com/spi_niec/"><i class="fa fab fa-instagram" aria-hidden="true" ></i></a></li>
+</li>
+          </ul>
+        </div>      
+      <div class="line"></div>
+      <div class="pow">
+        <p>Powered by Teamspi.in</p>
+      </div>
+      
+    </div>
+    
+  </div>
+
 
             
 </body>
@@ -153,4 +204,7 @@ sr.reveal('.team_member', {duration : 1000, origin : 'left' });
 sr.reveal('.footer-heading', {duration : 1000, origin : 'left'});
 sr.reveal('.social', {duration : 1000, origin : 'right' });
 </script>
+
+<script type="text/javascript" src = "{% static 'footer/man_footer.js' %}"></script>
+
 </html>
